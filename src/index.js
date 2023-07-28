@@ -7,17 +7,39 @@ const imageData = [
   { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_2947.jpg' },
 ]
 
+function makeImage(imgURL) {
+  const image = document.createElement("img")
+  image.src = imgURL.imageURL
+  image.style.height = "10em"
+  //image.classList.add("doggo")
+  return image
+}
+
+imageData.forEach(imgObj => {
+ const imgElement = makeImage(imgObj)
+ //document.body.prepend(imgElement)
+})
+
 
 // TASK 1- Import the data we need to "hydrate" our component.
 //  On the one hand, the default export from data/panelData.js
 //  On the other hand, the default export from data/constants.js
 //  Destructure `open` and `close` from the constants
 
+import panelData from "./data/panelData"
+import constants from "./data/constants"
+import linkData from "./data/linkData"
+
+//destructuring
+const { open, close} = constants
+
 
 // TASK 2- Verify our imports using log statements
-console.log() // log the panelData
-console.log() // log the open arrow
-console.log() // log the close arrow
+//console.log(panelData) // log the panelData
+//console.log(linkData) //log linkData
+//console.log(constants) // log contants
+//console.log(open) // log the open arrow
+//console.log(close) // log the close arrow
 
 
 // TASK 3- Comment out the div.panel from index.html and grab its parent element.
@@ -26,7 +48,7 @@ console.log() // log the close arrow
 const accordion = null
 
 
-// TASK 4- Create a function 'makePanel' that creates a panel exactly as you see it in the HTML.
+// TASK 4- Create a function 'makePanel' that creates a panel exactly as you see it in the HTML.  (using this data and attaching it to the DOM)
 function makePanel(/* what data does the panel need? */) {
 
 
